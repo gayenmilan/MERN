@@ -1,0 +1,100 @@
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+
+#display{
+    height:4rem;
+    border-radius:9px;
+    background-color: #cfdfcf;
+    color: black;
+    margin-top: 10px;
+    padding-top: 38px;
+    margin-bottom: 20px;
+    font-size: 42px;
+    text-align: end;
+    overflow: auto;
+}
+
+.number-select {
+    font-size: larger;
+}
+
+.hide {
+    display: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+.table {
+    border-spacing: 14px 20px;
+}
+
+.calc {
+    background-color:#4e4e4e;
+    display: flex;
+    justify-content: center;
+    width: 15rem;
+    flex-direction: column;
+    padding: 22px;
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px -1px #111
+}
+
+td{
+    width: 15rem;
+    background-color: #ebebea;
+    color:black;
+    text-align: center;
+    border-radius: 25%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 36px;
+   
+}
+
+td:hover {
+    background-color: #c1c1bd
+}
+#equals {
+    background-color: #fdc283;
+    color: #ffffff;
+}
+
+
+@media (min-width:300px) {
+   
+
+    td {
+        width: 2rem;
+    }
+}
+
+@media (min-width:768px) {
+    td{
+       padding: 1rem;
+    }
+    #display {
+        width: 98%;
+    }
+    .calc {
+        width: 25rem;
+    }
+}
