@@ -5,6 +5,7 @@ const allClear = document.querySelector('#on');
 const clear = document.querySelector('#clear');
 const plusMinus = document.querySelector('#plus-minus');
 const decimal = document.querySelector('#decimal');
+const percentage = document.querySelector('#percentage');
 
 const display = document.querySelector('#display');
 
@@ -14,69 +15,137 @@ let result = 0;
 let oper = '';
 
 
-numbers.forEach(number => {
-  number.addEventListener('click', () => {
-    display.innerHTML += number.innerHTML; 
-  });
-});
+// numbers.forEach((number) => {
+//   number.addEventListener('click', () => {
+//     display.innerHTML += number.innerHTML; 
+//   });
+// });
 
-operator.forEach((item) =>{
-    item.addEventListener('click', () =>{
+// operator.forEach((item) =>{
+//     item.addEventListener('click', () =>{
+//         num1 = Number(display.innerHTML);
+//         console.log('num1 =' + ' ' + num1);
+
+//         oper = item.innerHTML;
+//         console.log(oper);
+
+//         display.innerHTML = '';
+//     })
+// })
+
+// equals.addEventListener('click', () => {
+//     num2 = Number(display.innerHTML);
+
+//     if(oper === '+'){
+//         result = num1 + num2;
+//         display.innerHTML = result;
+//     }else if(oper === '-'){
+//         result = num1 - num2;
+//         display.innerHTML = result;
+//     }else if(oper === 'x'){
+//         result = num1 * num2;
+//         display.innerHTML = result;
+//     }else if(oper === '/'){
+//         result = num1 / num2;
+//         display.innerHTML = result;
+//     }
+
+//     console.log('num1 =' + ' ' + num1);
+//     console.log('num2 =' + ' ' + num2);
+//     console.log('result =' + ' ' + result);
+
+//     num2 = 0;
+
+// })
+
+// allClear.addEventListener('click', () => {
+//     display.innerHTML = '';
+//     num1 = 0;
+//     num2 = 0;
+// })
+
+// clear.addEventListener('click', () =>{
+//     display.innerHTML = display.innerHTML.slice(0, -1);
+//     console.log('num1 =' + ' ' + num1);
+//     console.log('num2 =' + ' ' + num2);
+//     console.log('result =' + ' ' + result);
+// })
+
+// plusMinus.addEventListener('click', () =>{
+//     display.innerHTML *= -1; 
+// })
+
+// decimal.addEventListener('click', () => {
+//     if(!display.innerHTML.includes('.')){
+//         display.innerHTML += decimal.innerHTML;
+//     }
+// })
+
+// percentage.addEventListener('click', () =>{
+//     display.innerHTML = display.innerHTML/100;
+// })
+
+numbers.forEach((number) => {
+    number.addEventListener('click', () =>{
+        display.innerHTML += number.innerHTML;
+    })
+})
+
+operator.forEach((item)=> {
+    item.addEventListener('click', ()=>{
         num1 = Number(display.innerHTML);
-        console.log('num1 =' + ' ' + num1);
 
+        
+        console.log("Num1 is" + " " + num1);
         oper = item.innerHTML;
-        console.log(oper);
-
+        console.log("Operator is" + " " + oper);
         display.innerHTML = '';
     })
 })
 
-equals.addEventListener('click', () => {
+equals.addEventListener('click', ()=>{
     num2 = Number(display.innerHTML);
 
     if(oper === '+'){
         result = num1 + num2;
         display.innerHTML = result;
-    }else if(oper === '-'){
+    }else if(oper === "-"){
         result = num1 - num2;
         display.innerHTML = result;
     }else if(oper === 'x'){
         result = num1 * num2;
         display.innerHTML = result;
-    }else if(oper === '/'){
+    }else if(oper === "/") {
         result = num1 / num2;
         display.innerHTML = result;
     }
 
-    console.log('num1 =' + ' ' + num1);
-    console.log('num2 =' + ' ' + num2);
-    console.log('result =' + ' ' + result);
-
-    num2 = 0;
-
+    console.log("Num1 is" + " " + num1);
+    console.log("Num2 is" + " " + num2);
+    console.log("Operator is" + " " + oper);
 })
 
-allClear.addEventListener('click', () => {
+allClear.addEventListener('click', ()=>{
     display.innerHTML = '';
-    num1 = 0;
-    num2 = 0;
+    num1=0;
+    num2=0;
+    result=0;
 })
 
-clear.addEventListener('click', () =>{
+clear.addEventListener('click', ()=>{
     display.innerHTML = display.innerHTML.slice(0, -1);
-    console.log('num1 =' + ' ' + num1);
-    console.log('num2 =' + ' ' + num2);
-    console.log('result =' + ' ' + result);
 })
 
-plusMinus.addEventListener('click', () =>{
-    display.innerHTML *= -1; 
-})
-
-decimal.addEventListener('click', () => {
+decimal.addEventListener('click', ()=>{
     if(!display.innerHTML.includes('.')){
         display.innerHTML += decimal.innerHTML;
     }
 })
 
+plusMinus.addEventListener('click', ()=>{
+    display.innerHTML = display.innerHTML * -1;
+})
+
+percentage.addEventListener('click', ()=>{
+    display.innerHTML = display.innerHTML / 100;
+})
